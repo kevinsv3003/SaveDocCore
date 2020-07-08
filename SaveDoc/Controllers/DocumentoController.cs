@@ -207,7 +207,7 @@ namespace SaveDoc.Controllers
                 else
                 {
                     Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                    //mensaje = "Se generó un error al eliminar el área!!";
+                    //mensaje = "Se generó un error al eliminar el área!!!";
                 }
             }
             catch (Exception ex)

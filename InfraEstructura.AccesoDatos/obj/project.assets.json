@@ -3517,11 +3517,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ksilva\\Desktop\\Proyectos\\Proyectos_Core\\savedoccore\\InfraEstructura.AccesoDatos\\InfraEstructura.AccesoDatos.csproj",
+      "projectUniqueName": "C:\\Users\\ksilva\\Desktop\\Proyectos\\GitHub\\SaveDocCore\\InfraEstructura.AccesoDatos\\InfraEstructura.AccesoDatos.csproj",
       "projectName": "InfraEstructura.AccesoDatos",
-      "projectPath": "C:\\Users\\ksilva\\Desktop\\Proyectos\\Proyectos_Core\\savedoccore\\InfraEstructura.AccesoDatos\\InfraEstructura.AccesoDatos.csproj",
+      "projectPath": "C:\\Users\\ksilva\\Desktop\\Proyectos\\GitHub\\SaveDocCore\\InfraEstructura.AccesoDatos\\InfraEstructura.AccesoDatos.csproj",
       "packagesPath": "C:\\Users\\ksilva\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ksilva\\Desktop\\Proyectos\\Proyectos_Core\\savedoccore\\InfraEstructura.AccesoDatos\\obj\\",
+      "outputPath": "C:\\Users\\ksilva\\Desktop\\Proyectos\\GitHub\\SaveDocCore\\InfraEstructura.AccesoDatos\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -3540,8 +3540,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\ksilva\\Desktop\\Proyectos\\Proyectos_Core\\savedoccore\\Entidades.Entidades\\Entidades.Entidades.csproj": {
-              "projectPath": "C:\\Users\\ksilva\\Desktop\\Proyectos\\Proyectos_Core\\savedoccore\\Entidades.Entidades\\Entidades.Entidades.csproj"
+            "C:\\Users\\ksilva\\Desktop\\Proyectos\\GitHub\\SaveDocCore\\Entidades.Entidades\\Entidades.Entidades.csproj": {
+              "projectPath": "C:\\Users\\ksilva\\Desktop\\Proyectos\\GitHub\\SaveDocCore\\Entidades.Entidades\\Entidades.Entidades.csproj"
             }
           }
         }

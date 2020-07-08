@@ -12126,11 +12126,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ksilva\\Desktop\\Proyectos\\Proyectos_Core\\savedoccore\\InfraEstructura.IoC\\InfraEstructura.IoC.csproj",
+      "projectUniqueName": "C:\\Users\\ksilva\\Desktop\\Proyectos\\GitHub\\SaveDocCore\\InfraEstructura.IoC\\InfraEstructura.IoC.csproj",
       "projectName": "InfraEstructura.IoC",
-      "projectPath": "C:\\Users\\ksilva\\Desktop\\Proyectos\\Proyectos_Core\\savedoccore\\InfraEstructura.IoC\\InfraEstructura.IoC.csproj",
+      "projectPath": "C:\\Users\\ksilva\\Desktop\\Proyectos\\GitHub\\SaveDocCore\\InfraEstructura.IoC\\InfraEstructura.IoC.csproj",
       "packagesPath": "C:\\Users\\ksilva\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ksilva\\Desktop\\Proyectos\\Proyectos_Core\\savedoccore\\InfraEstructura.IoC\\obj\\",
+      "outputPath": "C:\\Users\\ksilva\\Desktop\\Proyectos\\GitHub\\SaveDocCore\\InfraEstructura.IoC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12149,17 +12149,17 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\ksilva\\Desktop\\Proyectos\\Proyectos_Core\\savedoccore\\Dominio.Contratos\\Dominio.Contratos.csproj": {
-              "projectPath": "C:\\Users\\ksilva\\Desktop\\Proyectos\\Proyectos_Core\\savedoccore\\Dominio.Contratos\\Dominio.Contratos.csproj"
+            "C:\\Users\\ksilva\\Desktop\\Proyectos\\GitHub\\SaveDocCore\\Dominio.Contratos\\Dominio.Contratos.csproj": {
+              "projectPath": "C:\\Users\\ksilva\\Desktop\\Proyectos\\GitHub\\SaveDocCore\\Dominio.Contratos\\Dominio.Contratos.csproj"
             },
-            "C:\\Users\\ksilva\\Desktop\\Proyectos\\Proyectos_Core\\savedoccore\\Dominio.ReglaNegocio\\Dominio.ReglaNegocio.csproj": {
-              "projectPath": "C:\\Users\\ksilva\\Desktop\\Proyectos\\Proyectos_Core\\savedoccore\\Dominio.ReglaNegocio\\Dominio.ReglaNegocio.csproj"
+            "C:\\Users\\ksilva\\Desktop\\Proyectos\\GitHub\\SaveDocCore\\Dominio.ReglaNegocio\\Dominio.ReglaNegocio.csproj": {
+              "projectPath": "C:\\Users\\ksilva\\Desktop\\Proyectos\\GitHub\\SaveDocCore\\Dominio.ReglaNegocio\\Dominio.ReglaNegocio.csproj"
             },
-            "C:\\Users\\ksilva\\Desktop\\Proyectos\\Proyectos_Core\\savedoccore\\InfraEstructura.Contratos\\InfraEstructura.Contratos.csproj": {
-              "projectPath": "C:\\Users\\ksilva\\Desktop\\Proyectos\\Proyectos_Core\\savedoccore\\InfraEstructura.Contratos\\InfraEstructura.Contratos.csproj"
+            "C:\\Users\\ksilva\\Desktop\\Proyectos\\GitHub\\SaveDocCore\\InfraEstructura.Contratos\\InfraEstructura.Contratos.csproj": {
+              "projectPath": "C:\\Users\\ksilva\\Desktop\\Proyectos\\GitHub\\SaveDocCore\\InfraEstructura.Contratos\\InfraEstructura.Contratos.csproj"
             },
-            "C:\\Users\\ksilva\\Desktop\\Proyectos\\Proyectos_Core\\savedoccore\\InfraEstructura.UoW\\InfraEstructura.UoW.csproj": {
-              "projectPath": "C:\\Users\\ksilva\\Desktop\\Proyectos\\Proyectos_Core\\savedoccore\\InfraEstructura.UoW\\InfraEstructura.UoW.csproj"
+            "C:\\Users\\ksilva\\Desktop\\Proyectos\\GitHub\\SaveDocCore\\InfraEstructura.UoW\\InfraEstructura.UoW.csproj": {
+              "projectPath": "C:\\Users\\ksilva\\Desktop\\Proyectos\\GitHub\\SaveDocCore\\InfraEstructura.UoW\\InfraEstructura.UoW.csproj"
             }
           }
         }

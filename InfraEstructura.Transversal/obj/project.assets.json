@@ -5611,11 +5611,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ksilva\\Desktop\\Proyectos\\Proyectos_Core\\savedoccore\\InfraEstructura.Transversal\\InfraEstructura.Transversal.csproj",
+      "projectUniqueName": "C:\\Users\\ksilva\\Desktop\\Proyectos\\GitHub\\SaveDocCore\\InfraEstructura.Transversal\\InfraEstructura.Transversal.csproj",
       "projectName": "InfraEstructura.Transversal",
-      "projectPath": "C:\\Users\\ksilva\\Desktop\\Proyectos\\Proyectos_Core\\savedoccore\\InfraEstructura.Transversal\\InfraEstructura.Transversal.csproj",
+      "projectPath": "C:\\Users\\ksilva\\Desktop\\Proyectos\\GitHub\\SaveDocCore\\InfraEstructura.Transversal\\InfraEstructura.Transversal.csproj",
       "packagesPath": "C:\\Users\\ksilva\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ksilva\\Desktop\\Proyectos\\Proyectos_Core\\savedoccore\\InfraEstructura.Transversal\\obj\\",
+      "outputPath": "C:\\Users\\ksilva\\Desktop\\Proyectos\\GitHub\\SaveDocCore\\InfraEstructura.Transversal\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

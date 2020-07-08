@@ -710,11 +710,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ksilva\\Desktop\\Proyectos\\Proyectos_Core\\savedoccore\\InfraEstructura.Contratos\\InfraEstructura.Contratos.csproj",
+      "projectUniqueName": "C:\\Users\\ksilva\\Desktop\\Proyectos\\GitHub\\SaveDocCore\\InfraEstructura.Contratos\\InfraEstructura.Contratos.csproj",
       "projectName": "InfraEstructura.Contratos",
-      "projectPath": "C:\\Users\\ksilva\\Desktop\\Proyectos\\Proyectos_Core\\savedoccore\\InfraEstructura.Contratos\\InfraEstructura.Contratos.csproj",
+      "projectPath": "C:\\Users\\ksilva\\Desktop\\Proyectos\\GitHub\\SaveDocCore\\InfraEstructura.Contratos\\InfraEstructura.Contratos.csproj",
       "packagesPath": "C:\\Users\\ksilva\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ksilva\\Desktop\\Proyectos\\Proyectos_Core\\savedoccore\\InfraEstructura.Contratos\\obj\\",
+      "outputPath": "C:\\Users\\ksilva\\Desktop\\Proyectos\\GitHub\\SaveDocCore\\InfraEstructura.Contratos\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -733,8 +733,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\ksilva\\Desktop\\Proyectos\\Proyectos_Core\\savedoccore\\Entidades.Entidades\\Entidades.Entidades.csproj": {
-              "projectPath": "C:\\Users\\ksilva\\Desktop\\Proyectos\\Proyectos_Core\\savedoccore\\Entidades.Entidades\\Entidades.Entidades.csproj"
+            "C:\\Users\\ksilva\\Desktop\\Proyectos\\GitHub\\SaveDocCore\\Entidades.Entidades\\Entidades.Entidades.csproj": {
+              "projectPath": "C:\\Users\\ksilva\\Desktop\\Proyectos\\GitHub\\SaveDocCore\\Entidades.Entidades\\Entidades.Entidades.csproj"
             }
           }
         }

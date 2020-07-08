@@ -694,11 +694,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ksilva\\Desktop\\Proyectos\\Proyectos_Core\\savedoccore\\Dominio.EntidadesDto\\Dominio.EntidadesDto.csproj",
+      "projectUniqueName": "C:\\Users\\ksilva\\Desktop\\Proyectos\\GitHub\\SaveDocCore\\Dominio.EntidadesDto\\Dominio.EntidadesDto.csproj",
       "projectName": "Dominio.EntidadesDto",
-      "projectPath": "C:\\Users\\ksilva\\Desktop\\Proyectos\\Proyectos_Core\\savedoccore\\Dominio.EntidadesDto\\Dominio.EntidadesDto.csproj",
+      "projectPath": "C:\\Users\\ksilva\\Desktop\\Proyectos\\GitHub\\SaveDocCore\\Dominio.EntidadesDto\\Dominio.EntidadesDto.csproj",
       "packagesPath": "C:\\Users\\ksilva\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ksilva\\Desktop\\Proyectos\\Proyectos_Core\\savedoccore\\Dominio.EntidadesDto\\obj\\",
+      "outputPath": "C:\\Users\\ksilva\\Desktop\\Proyectos\\GitHub\\SaveDocCore\\Dominio.EntidadesDto\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

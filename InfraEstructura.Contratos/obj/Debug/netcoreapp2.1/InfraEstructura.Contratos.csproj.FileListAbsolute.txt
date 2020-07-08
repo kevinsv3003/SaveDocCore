@@ -38,3 +38,17 @@ C:\Users\ksilva\Desktop\Proyectos\Proyectos_Core\savedoccore\InfraEstructura.Con
 C:\Users\ksilva\Desktop\Proyectos\Proyectos_Core\savedoccore\InfraEstructura.Contratos\obj\Debug\netcoreapp2.1\InfraEstructura.Contratos.csproj.CopyComplete
 C:\Users\ksilva\Desktop\Proyectos\Proyectos_Core\savedoccore\InfraEstructura.Contratos\obj\Debug\netcoreapp2.1\InfraEstructura.Contratos.dll
 C:\Users\ksilva\Desktop\Proyectos\Proyectos_Core\savedoccore\InfraEstructura.Contratos\obj\Debug\netcoreapp2.1\InfraEstructura.Contratos.pdb
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\InfraEstructura.Contratos\bin\Debug\netcoreapp2.1\InfraEstructura.Contratos.deps.json
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\InfraEstructura.Contratos\bin\Debug\netcoreapp2.1\InfraEstructura.Contratos.dll
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\InfraEstructura.Contratos\bin\Debug\netcoreapp2.1\InfraEstructura.Contratos.pdb
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\InfraEstructura.Contratos\bin\Debug\netcoreapp2.1\Entidades.Entidades.dll
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\InfraEstructura.Contratos\bin\Debug\netcoreapp2.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\InfraEstructura.Contratos\bin\Debug\netcoreapp2.1\Entidades.Entidades.pdb
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\InfraEstructura.Contratos\bin\Debug\netcoreapp2.1\Microsoft.Extensions.Identity.Stores.xml
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\InfraEstructura.Contratos\obj\Debug\netcoreapp2.1\InfraEstructura.Contratos.csprojAssemblyReference.cache
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\InfraEstructura.Contratos\obj\Debug\netcoreapp2.1\InfraEstructura.Contratos.csproj.CoreCompileInputs.cache
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\InfraEstructura.Contratos\obj\Debug\netcoreapp2.1\InfraEstructura.Contratos.AssemblyInfoInputs.cache
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\InfraEstructura.Contratos\obj\Debug\netcoreapp2.1\InfraEstructura.Contratos.AssemblyInfo.cs
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\InfraEstructura.Contratos\obj\Debug\netcoreapp2.1\InfraEstructura.Contratos.csproj.CopyComplete
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\InfraEstructura.Contratos\obj\Debug\netcoreapp2.1\InfraEstructura.Contratos.dll
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\InfraEstructura.Contratos\obj\Debug\netcoreapp2.1\InfraEstructura.Contratos.pdb

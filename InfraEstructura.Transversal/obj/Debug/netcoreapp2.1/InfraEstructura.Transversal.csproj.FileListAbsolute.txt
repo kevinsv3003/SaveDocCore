@@ -30,3 +30,15 @@ C:\Users\ksilva\Desktop\Proyectos\Proyectos_Core\savedoccore\InfraEstructura.Tra
 C:\Users\ksilva\Desktop\Proyectos\Proyectos_Core\savedoccore\InfraEstructura.Transversal\obj\Debug\netcoreapp2.1\InfraEstructura.Transversal.csproj.CopyComplete
 C:\Users\ksilva\Desktop\Proyectos\Proyectos_Core\savedoccore\InfraEstructura.Transversal\obj\Debug\netcoreapp2.1\InfraEstructura.Transversal.dll
 C:\Users\ksilva\Desktop\Proyectos\Proyectos_Core\savedoccore\InfraEstructura.Transversal\obj\Debug\netcoreapp2.1\InfraEstructura.Transversal.pdb
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\InfraEstructura.Transversal\bin\Debug\netcoreapp2.1\InfraEstructura.Transversal.deps.json
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\InfraEstructura.Transversal\bin\Debug\netcoreapp2.1\InfraEstructura.Transversal.dll
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\InfraEstructura.Transversal\bin\Debug\netcoreapp2.1\InfraEstructura.Transversal.pdb
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\InfraEstructura.Transversal\bin\Debug\netcoreapp2.1\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\InfraEstructura.Transversal\bin\Debug\netcoreapp2.1\Microsoft.AspNetCore.Http.Features.xml
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\InfraEstructura.Transversal\obj\Debug\netcoreapp2.1\InfraEstructura.Transversal.csprojAssemblyReference.cache
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\InfraEstructura.Transversal\obj\Debug\netcoreapp2.1\InfraEstructura.Transversal.csproj.CoreCompileInputs.cache
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\InfraEstructura.Transversal\obj\Debug\netcoreapp2.1\InfraEstructura.Transversal.AssemblyInfoInputs.cache
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\InfraEstructura.Transversal\obj\Debug\netcoreapp2.1\InfraEstructura.Transversal.AssemblyInfo.cs
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\InfraEstructura.Transversal\obj\Debug\netcoreapp2.1\InfraEstructura.Transversal.csproj.CopyComplete
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\InfraEstructura.Transversal\obj\Debug\netcoreapp2.1\InfraEstructura.Transversal.dll
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\InfraEstructura.Transversal\obj\Debug\netcoreapp2.1\InfraEstructura.Transversal.pdb

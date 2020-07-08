@@ -30,3 +30,15 @@ C:\Users\ksilva\Desktop\Proyectos\Proyectos_Core\savedoccore\Entidades.Entidades
 C:\Users\ksilva\Desktop\Proyectos\Proyectos_Core\savedoccore\Entidades.Entidades\obj\Debug\netcoreapp2.1\Entidades.Entidades.csproj.CopyComplete
 C:\Users\ksilva\Desktop\Proyectos\Proyectos_Core\savedoccore\Entidades.Entidades\obj\Debug\netcoreapp2.1\Entidades.Entidades.dll
 C:\Users\ksilva\Desktop\Proyectos\Proyectos_Core\savedoccore\Entidades.Entidades\obj\Debug\netcoreapp2.1\Entidades.Entidades.pdb
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\Entidades.Entidades\bin\Debug\netcoreapp2.1\Entidades.Entidades.deps.json
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\Entidades.Entidades\bin\Debug\netcoreapp2.1\Entidades.Entidades.dll
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\Entidades.Entidades\bin\Debug\netcoreapp2.1\Entidades.Entidades.pdb
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\Entidades.Entidades\bin\Debug\netcoreapp2.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\Entidades.Entidades\bin\Debug\netcoreapp2.1\Microsoft.Extensions.Identity.Stores.xml
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\Entidades.Entidades\obj\Debug\netcoreapp2.1\Entidades.Entidades.csprojAssemblyReference.cache
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\Entidades.Entidades\obj\Debug\netcoreapp2.1\Entidades.Entidades.csproj.CoreCompileInputs.cache
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\Entidades.Entidades\obj\Debug\netcoreapp2.1\Entidades.Entidades.AssemblyInfoInputs.cache
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\Entidades.Entidades\obj\Debug\netcoreapp2.1\Entidades.Entidades.AssemblyInfo.cs
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\Entidades.Entidades\obj\Debug\netcoreapp2.1\Entidades.Entidades.csproj.CopyComplete
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\Entidades.Entidades\obj\Debug\netcoreapp2.1\Entidades.Entidades.dll
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\Entidades.Entidades\obj\Debug\netcoreapp2.1\Entidades.Entidades.pdb
