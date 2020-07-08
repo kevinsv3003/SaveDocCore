@@ -4735,7 +4735,7 @@
           "InfraEstructura.Contratos": "1.0.0",
           "InfraEstructura.Transversal": "1.0.0",
           "InfraEstructura.UoW": "1.0.0",
-          "Microsoft.AspNetCore.App": "2.1.4"
+          "Microsoft.AspNetCore.App": "2.1.1"
         },
         "compile": {
           "bin/placeholder/Dominio.ReglaNegocio.dll": {}
@@ -13019,16 +13019,5 @@
         "warn": true
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Degradación del paquete detectada: Microsoft.AspNetCore.App de 2.1.4 a 2.1.1. Haga referencia al paquete directamente desde el proyecto para seleccionar una versión diferente. \r\n SaveDoc -> InfraEstructura.IoC -> Dominio.ReglaNegocio -> Microsoft.AspNetCore.App (>= 2.1.4) \r\n SaveDoc -> Microsoft.AspNetCore.App (>= 2.1.1)",
-      "libraryId": "Microsoft.AspNetCore.App",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v2.1"
-      ]
-    }
-  ]
+  }
 }
