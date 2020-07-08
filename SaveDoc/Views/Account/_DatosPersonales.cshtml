@@ -1,0 +1,190 @@
+﻿@model Entidades.Entidades.UsuarioApp
+
+@{ 
+    var sexo = (Model.Sexo == "M") ? "Masculino" : "Femenino";
+}
+
+<div class="row">
+    <div class=" col-md-12">
+        <div class="box box-success shadow">
+            <div class="box-header with-border">
+                <i class="fa fa-id-card-o"></i>
+                <h3 class="box-title">Datos Personales</h3>
+
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="" data-original-title="Collapse">
+                        <i class="fa fa-minus"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- /.box-header -->
+            <div class="box-body box-profile" style="padding: 10px 20px 10px 20px">
+                <div id="divInfoEst" style="height: 420px;">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="row">
+                                <div class="form-group">
+                                    <h5 class="col-md-2 text-bold">Nombres: </h5>
+                                    <div class="col-md-10">
+                                        <h5>@Model.Nombres</h5>
+                                    </div>
+                                </div>
+                            </div>      <br />
+                            <br />
+                            <div class="row">
+                                <div class="form-group">
+                                    <h5 class="col-md-2 text-bold">Apellidos: </h5>
+                                    <div class="col-md-10">
+                                        <h5>@Model.Apellidos</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <br />
+                            <br />
+                            <div class="row">
+                                <div class="form-group">
+                                    <h5 class="col-md-2 text-bold">Fecha de Nacimiento: </h5>
+                                    <div class="col-md-10">
+                                        <h5>@ViewBag.FechaNacimiento</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <br />
+                            <div class="row">
+                                <div class="form-group">
+                                    <h5 class="col-md-2 text-bold">Edad: </h5>
+                                    <div class="col-md-10">
+                                        <h5>@ViewBag.Edad</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <br />
+                            <div class="row">
+                                <div class="form-group">
+                                    <h5 class="col-md-2 text-bold">Sexo: </h5>
+                                    <div class="col-md-10">
+                                        <h5>@sexo</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <br />
+                            <div class="row">
+                                <div class="form-group">
+                                    <h5 class="col-md-2 text-bold">Dirección: </h5>
+                                    <div class="col-md-10">
+                                        <h5>@Model.Direccion</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <br />
+                            <br />
+                            <div class="row">
+                                <div class="form-group">
+                                    <h5 class="col-md-2 text-bold">Télefono: </h5>
+                                    <div class="col-md-10">
+                                        <h5>@Model.PhoneNumber</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <br />
+                            <div class="row">
+                                <div class="form-group">
+                                    <h5 class="col-md-2 text-bold">Correo: </h5>
+                                    <div class="col-md-10">
+                                        <h5>@Model.Email</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <br />
+                            <div class="row">
+                                <div class="form-group">
+                                    <h5 class="col-md-2 text-bold">Contraseña: </h5>
+                                    <div class="col-md-10">
+                                        <h5>[<a href="#" style="color:#01714a" onclick="ShowModalChangePass()">Cambiar Contraseña</a>]</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <br />
+
+                        </div>
+
+                        <div class="col-md-3">
+                            <fieldset style="display: block;
+                                            margin-left: 2px;
+                                            margin-right: 2px;
+                                            padding-top: 0.35em;
+                                            padding-bottom: 0.625em;
+                                            padding-left: 0.75em;
+                                            padding-right: 0.75em;
+                                            border: 2px groove;">
+                                <legend style="width:auto;
+                                            padding:0px 12px;
+                                            margin:0px;">
+                                    Datos de Usuario
+                                </legend>
+
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-6 pull-left" style="padding-right:0px">
+                                                <h5 class="text-bold">Nombre de Usuario: </h5>
+                                            </div>
+
+                                            <div class="col-md-6  pull-left" style="padding-left:0px">
+                                                <h5>@Model.UserName</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-6 pull-left" style="padding-right:0px">
+                                                <h5 class="text-bold">Rol: </h5>
+                                            </div>
+                                            <div class="col-md-6 pull-left" style="padding-left:0px">
+                                                <h5>@ViewBag.Rol</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+                            </fieldset>
+                        </div>
+                        <br />
+                        <div class="col-md-4">
+                            <div class="col-md-12">
+                                <div class="row " style="margin-bottom:10px">
+                                    @if (Model.Sexo == "M")
+                                    {<img class="profile-user-img img-responsive pull-right" style="width:65%; height:230px" src="~/dist/img/avatar5.png" alt="User profile picture">}
+                                    else
+                                    {<img class="profile-user-img img-responsive pull-right" style="width:65%; height:230px" src="~/dist/img/avatar2.png" alt="User profile picture">}
+
+                                </div>
+
+                                <div class="row" style="margin-top:10px">
+                                    <button class="btn btn-block btn-social bg-olive pull-right" style=" width:65%;" type="button" onclick="ShowModalEdit(1,'')" ><i class="fa fa-pencil-square-o"></i>&nbsp;<b>Editar Información</b></button>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

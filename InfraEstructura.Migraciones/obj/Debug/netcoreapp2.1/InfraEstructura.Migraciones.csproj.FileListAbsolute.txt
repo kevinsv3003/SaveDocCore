@@ -1,0 +1,12 @@
+C:\Users\ksilva\Desktop\Proyectos\MiProyectoCore_KSV\MiProyectoCore\InfraEstructura.Migraciones\bin\Debug\netcoreapp2.1\InfraEstructura.Migraciones.deps.json
+C:\Users\ksilva\Desktop\Proyectos\MiProyectoCore_KSV\MiProyectoCore\InfraEstructura.Migraciones\bin\Debug\netcoreapp2.1\InfraEstructura.Migraciones.dll
+C:\Users\ksilva\Desktop\Proyectos\MiProyectoCore_KSV\MiProyectoCore\InfraEstructura.Migraciones\obj\Debug\netcoreapp2.1\InfraEstructura.Migraciones.csproj.CoreCompileInputs.cache
+C:\Users\ksilva\Desktop\Proyectos\MiProyectoCore_KSV\MiProyectoCore\InfraEstructura.Migraciones\obj\Debug\netcoreapp2.1\InfraEstructura.Migraciones.AssemblyInfoInputs.cache
+C:\Users\ksilva\Desktop\Proyectos\MiProyectoCore_KSV\MiProyectoCore\InfraEstructura.Migraciones\obj\Debug\netcoreapp2.1\InfraEstructura.Migraciones.AssemblyInfo.cs
+C:\Users\ksilva\Desktop\Proyectos\MiProyectoCore_KSV\MiProyectoCore\InfraEstructura.Migraciones\bin\Debug\netcoreapp2.1\InfraEstructura.Migraciones.pdb
+C:\Users\ksilva\Desktop\Proyectos\MiProyectoCore_KSV\MiProyectoCore\InfraEstructura.Migraciones\obj\Debug\netcoreapp2.1\InfraEstructura.Migraciones.csprojAssemblyReference.cache
+C:\Users\ksilva\Desktop\Proyectos\MiProyectoCore_KSV\MiProyectoCore\InfraEstructura.Migraciones\obj\Debug\netcoreapp2.1\InfraEstructura.Migraciones.dll
+C:\Users\ksilva\Desktop\Proyectos\MiProyectoCore_KSV\MiProyectoCore\InfraEstructura.Migraciones\obj\Debug\netcoreapp2.1\InfraEstructura.Migraciones.pdb
+C:\Users\ksilva\Desktop\Proyectos\MiProyectoCore_KSV\MiProyectoCore\InfraEstructura.Migraciones\bin\Debug\netcoreapp2.1\Entidades.Entidades.dll
+C:\Users\ksilva\Desktop\Proyectos\MiProyectoCore_KSV\MiProyectoCore\InfraEstructura.Migraciones\bin\Debug\netcoreapp2.1\Entidades.Entidades.pdb
+C:\Users\ksilva\Desktop\Proyectos\MiProyectoCore_KSV\MiProyectoCore\InfraEstructura.Migraciones\obj\Debug\netcoreapp2.1\InfraEstructura.Migraciones.csproj.CopyComplete
