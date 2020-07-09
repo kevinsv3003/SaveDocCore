@@ -11,21 +11,10 @@ namespace InfraEstructura.AccesoDatos
     {
         public DocumentoContext()
         {
-
         }
 
         public DocumentoContext(DbContextOptions<DocumentoContext> options) : base(options)
         {
-            try
-            {
-                //Database.Migrate();
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
