@@ -65,7 +65,11 @@ using SaveDoc.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(76, 68, false);
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "92b9ec5e407b49eaafe120fd3358c85e", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "397330cc8f2c499b88569e7edfb013f6", async() => {
+>>>>>>> nombreRama
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
