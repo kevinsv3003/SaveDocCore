@@ -62,8 +62,8 @@ namespace Dominio.ReglaNegocio
                 usuario.Email = usuariodto.Email;
                 usuario.Edad = General.ObtenerEdadActual(usuario.FechaNacimiento);
                 
-                var roles = await obtenerRolUsuario(usuario);
-                var borrarRol = (roles != string.Empty) ? await _userManager.RemoveFromRoleAsync(usuario, await obtenerRolUsuario(usuario)) : null;
+                var rolUsuario = await obtenerRolUsuario(usuario);
+                var borrarRol = (rolUsuario != string.Empty) ? await _userManager.RemoveFromRoleAsync(usuario, rolUsuario) : null;
                 var AsignarRol = (borrarRol.Succeeded) ? await _userManager.AddToRoleAsync(usuario, usuariodto.Rol) : null;
                 var Actualizado = await _userManager.UpdateAsync(usuario);
 
