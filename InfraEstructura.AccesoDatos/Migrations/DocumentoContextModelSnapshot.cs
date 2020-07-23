@@ -77,6 +77,28 @@ namespace InfraEstructura.AccesoDatos.Migrations
                     b.ToTable("Documentos");
                 });
 
+            modelBuilder.Entity("Entidades.Entidades.LogTransaccion", b =>
+                {
+                    b.Property<int>("LogTransaccionID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Accion")
+                        .IsRequired()
+                        .HasColumnType("varchar(200)");
+
+                    b.Property<DateTime?>("FechaProceso")
+                        .IsRequired();
+
+                    b.Property<string>("Usuario")
+                        .IsRequired()
+                        .HasColumnType("varchar(200)");
+
+                    b.HasKey("LogTransaccionID");
+
+                    b.ToTable("LogTransaccion","AUDI");
+                });
+
             modelBuilder.Entity("Entidades.Entidades.Documento", b =>
                 {
                     b.HasOne("Entidades.Entidades.Area", "Areas")

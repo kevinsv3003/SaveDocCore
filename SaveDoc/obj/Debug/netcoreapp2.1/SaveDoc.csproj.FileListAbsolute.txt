@@ -215,4 +215,4 @@ C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\SaveDoc\obj\Debug\netcoreap
 C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\SaveDoc\obj\Debug\netcoreapp2.1\SaveDoc.csproj.CopyComplete
 C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\SaveDoc\obj\Debug\netcoreapp2.1\SaveDoc.dll
 C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\SaveDoc\obj\Debug\netcoreapp2.1\SaveDoc.pdb
-C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\SaveDoc\obj\Debug\netcoreapp2.1\Razor\Views\Area\_vistaPrueba.g.cshtml.cs
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\SaveDoc\obj\Debug\netcoreapp2.1\Razor\Views\Documento\nuevaVistaDoc.g.cshtml.cs
