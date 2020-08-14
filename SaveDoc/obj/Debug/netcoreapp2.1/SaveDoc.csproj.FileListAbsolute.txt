@@ -175,7 +175,6 @@ C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\SaveDoc\obj\Debug\netcoreap
 C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\SaveDoc\obj\Debug\netcoreapp2.1\SaveDoc.csproj.CoreCompileInputs.cache
 C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\SaveDoc\obj\Debug\netcoreapp2.1\SaveDoc.RazorAssemblyInfo.cache
 C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\SaveDoc\obj\Debug\netcoreapp2.1\SaveDoc.RazorAssemblyInfo.cs
-C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\SaveDoc\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
 C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\SaveDoc\obj\Debug\netcoreapp2.1\SaveDoc.AssemblyInfoInputs.cache
 C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\SaveDoc\obj\Debug\netcoreapp2.1\SaveDoc.AssemblyInfo.cs
 C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\SaveDoc\obj\Debug\netcoreapp2.1\SaveDoc.TagHelpers.input.cache
@@ -216,3 +215,4 @@ C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\SaveDoc\obj\Debug\netcoreap
 C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\SaveDoc\obj\Debug\netcoreapp2.1\SaveDoc.dll
 C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\SaveDoc\obj\Debug\netcoreapp2.1\SaveDoc.pdb
 C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\SaveDoc\obj\Debug\netcoreapp2.1\Razor\Views\Documento\nuevaVistaDoc.g.cshtml.cs
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\SaveDoc\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
