@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using ClosedXML.Excel;
 using Dominio.Contratos;
 using Dominio.EntidadesDto;
 using Entidades.Entidades;
@@ -6,6 +7,7 @@ using InfraEstructura.Transversal;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -49,8 +51,7 @@ namespace Dominio.ReglaNegocio
             bool respuesta = false;
             try
             {
-                //var usuario = await _userManager.FindByNameAsync(usuariodto.UserName);
-                var usuario = await _userManager.FindByIdAsync(usuariodto.Id);
+                var usuario =  await _userManager.FindByIdAsync(usuariodto.Id);
 
                 usuario.Nombres = usuariodto.Nombres;
                 usuario.Apellidos = usuariodto.Apellidos;
@@ -60,7 +61,7 @@ namespace Dominio.ReglaNegocio
                 usuario.Direccion = usuariodto.Direccion;
                 usuario.PhoneNumber = usuariodto.PhoneNumber;
                 usuario.Email = usuariodto.Email;
-                usuario.Edad = General.ObtenerEdadActual(usuario.FechaNacimiento);
+                usuario.Edad = General.ObtenerEdadActual(usuariodto.FechaNacimiento);
                 
                 var rolUsuario = await obtenerRolUsuario(usuario);
                 var borrarRol = (rolUsuario != string.Empty) ? await _userManager.RemoveFromRoleAsync(usuario, rolUsuario) : null;
@@ -122,13 +123,67 @@ namespace Dominio.ReglaNegocio
         public async Task<bool> ResetPass(UsuarioApp user, string pass)
         {
             //var removePass = await _userManager.RemovePasswordAsync(user);
-            var tokenResetPass = await _userManager.GeneratePasswordResetTokenAsync(user);
             //var resetPass = await _userManager.AddPasswordAsync(user, contraseña);
+            var tokenResetPass = await _userManager.GeneratePasswordResetTokenAsync(user);
             var resetPass = await _userManager.ResetPasswordAsync(user, tokenResetPass, pass);
 
             return resetPass.Succeeded;
         }
 
-      
+        public async Task<byte[]> ObtenerUsuariosExcel()
+        {
+            var usuarios = ObtenerUsuarios();
+            using (var workbook = new XLWorkbook())
+            {
+                var worksheet = workbook.Worksheets.Add("Usuarios");
+
+                worksheet.Range("B2:I3").Merge().SetValue("LISTADO DE USUARIOS ACTIVOS").Style
+                    .Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center)
+                    .Alignment.SetVertical(XLAlignmentVerticalValues.Center)
+                    .Font.SetBold()
+                    .Font.SetFontColor(XLColor.White)
+                    .Fill.SetBackgroundColor(XLColor.FromArgb(56, 162, 81));
+
+                worksheet.Cell("B4").Value = "Usuario";
+                worksheet.Cell("C4").Value = "Nombre";
+                worksheet.Cell("D4").Value = "Apellidos";
+                worksheet.Cell("E4").Value = "Correo";
+                worksheet.Cell("F4").Value = "Fecha Nacimiento";
+                worksheet.Cell("G4").Value = "Sexo";
+                worksheet.Cell("H4").Value = "Rol";
+                worksheet.Cell("I4").Value = "Direccion";
+                worksheet.Range("B4:I4").Style
+                    .Border.SetOutsideBorder(XLBorderStyleValues.Thin)
+                    .Border.SetInsideBorder(XLBorderStyleValues.Thin)
+                    .Font.SetBold()
+                    .Fill.SetBackgroundColor(XLColor.AliceBlue);
+                worksheet.Range("B4:I4").SetAutoFilter();
+
+                worksheet.Range("B2:I" + (usuarios.Count() + 4).ToString()).Style.Border.SetInsideBorder(XLBorderStyleValues.Thin);
+                worksheet.Range("B2:I" + (usuarios.Count() + 4).ToString()).Style.Border.SetOutsideBorder(XLBorderStyleValues.Thin);
+
+                var currentRow = 4;
+                foreach (var user in usuarios)
+                {
+                    currentRow++;
+                    worksheet.Cell("B" + currentRow).Value = user.UserName;
+                    worksheet.Cell("C" + currentRow).Value = user.Nombres;
+                    worksheet.Cell("D" + currentRow).Value = user.Apellidos;
+                    worksheet.Cell("E" + currentRow).Value = user.Email;
+                    worksheet.Cell("F" + currentRow).Value = user.FechaNacimiento;
+                    worksheet.Cell("G" + currentRow).Value = user.Sexo;
+                    worksheet.Cell("H" + currentRow).Value = user.Rol;
+                    worksheet.Cell("I" + currentRow).Value = user.Direccion;
+                }
+                worksheet.Columns(2, 9).AdjustToContents();
+                using (var stream = new MemoryStream())
+                {
+                    workbook.SaveAs(stream);
+                    var content = stream.ToArray();
+
+                    return content;
+                }
+            }
+        }
     }
 }

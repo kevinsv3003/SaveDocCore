@@ -15,5 +15,6 @@ namespace Dominio.Contratos
         Task<bool> GuardarUsuario(UsuarioDto usuarioDto);
         Task<bool> EliminarUsuario(string Id);
         List<UsuarioDto> ObtenerUsuarios();
+        Task<byte[]> ObtenerUsuariosExcel();
     } 
 }

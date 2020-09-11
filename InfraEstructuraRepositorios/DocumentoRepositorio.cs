@@ -36,7 +36,7 @@ namespace InfraEstructuraRepositorios
                     cmd.Parameters.Add("@fechaRegistro", SqlDbType.DateTime).Value = doc.FechaRegistro;
                     cmd.Parameters.Add("@areaId", SqlDbType.Int).Value = doc.AreaId;
                     cmd.Parameters.Add("@docByte", SqlDbType.VarBinary).Value = doc.DocumentoByte;
-                    cmd.Parameters.Add("@Extension", SqlDbType.VarChar).Value = doc.Extension;
+                    cmd.Parameters.Add("@Extension", SqlDbType.VarChar).Value = (doc.Extension == "application/octet-stream") ? "text/plain" : doc.Extension;
 
                     cmd.ExecuteNonQuery();
                     retorno = true;
@@ -62,7 +62,7 @@ namespace InfraEstructuraRepositorios
                     cmd.CommandText = query;
                     cmd.Parameters.Add("@documentoId", SqlDbType.Int).Value = docId;
                     cmd.Parameters.Add("@docByte", SqlDbType.VarBinary).Value = documento;
-                    cmd.Parameters.Add("@Extension", SqlDbType.VarChar).Value = extension;
+                    cmd.Parameters.Add("@Extension", SqlDbType.VarChar).Value = (extension == "application/octet-stream") ? "text/plain" : extension;
 
                     cmd.ExecuteNonQuery();
                     retorno = true;

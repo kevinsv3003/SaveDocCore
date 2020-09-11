@@ -345,58 +345,8 @@ namespace SaveDoc.Controllers
 
         public async Task<IActionResult> Exportar()
         {
-            var usuarios = usuarioNegocio.ObtenerUsuarios();
-            using (var workbook = new XLWorkbook())
-            {
-                var worksheet = workbook.Worksheets.Add("Usuarios");
-
-                worksheet.Range("B2:I3").Merge().SetValue("LISTADO DE USUARIOS ACTIVOS").Style
-                    .Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center)
-                    .Alignment.SetVertical(XLAlignmentVerticalValues.Center)
-                    .Font.SetBold()
-                    .Font.SetFontColor(XLColor.White)
-                    .Fill.SetBackgroundColor(XLColor.FromArgb(56, 162, 81));
-
-                worksheet.Cell("B4").Value = "Usuario";
-                worksheet.Cell("C4").Value = "Nombre";
-                worksheet.Cell("D4").Value = "Apellidos";
-                worksheet.Cell("E4").Value = "Correo";
-                worksheet.Cell("F4").Value = "Fecha Nacimiento";
-                worksheet.Cell("G4").Value = "Sexo";
-                worksheet.Cell("H4").Value = "Rol";
-                worksheet.Cell("I4").Value = "Direccion";
-                worksheet.Range("B4:I4").Style
-                    .Border.SetOutsideBorder(XLBorderStyleValues.Thin)
-                    .Border.SetInsideBorder(XLBorderStyleValues.Thin)
-                    .Font.SetBold()
-                    .Fill.SetBackgroundColor(XLColor.AliceBlue);
-                worksheet.Range("B4:I4").SetAutoFilter();
-
-                worksheet.Range("B2:I" + (usuarios.Count() + 4).ToString()).Style.Border.SetInsideBorder(XLBorderStyleValues.Thin);
-                worksheet.Range("B2:I" + (usuarios.Count() + 4).ToString()).Style.Border.SetOutsideBorder(XLBorderStyleValues.Thin);
-
-                var currentRow = 4;
-                foreach (var user in usuarios)
-                {
-                    currentRow++;
-                    worksheet.Cell("B" + currentRow).Value = user.UserName;
-                    worksheet.Cell("C" + currentRow).Value = user.Nombres;
-                    worksheet.Cell("D" + currentRow).Value = user.Apellidos;
-                    worksheet.Cell("E" + currentRow).Value = user.Email;
-                    worksheet.Cell("F" + currentRow).Value = user.FechaNacimiento;
-                    worksheet.Cell("G" + currentRow).Value = user.Sexo;
-                    worksheet.Cell("H" + currentRow).Value = user.Rol;
-                    worksheet.Cell("I" + currentRow).Value = user.Direccion;
-                }
-                worksheet.Columns(2, 9).AdjustToContents();
-                using (var stream = new MemoryStream())
-                {
-                    workbook.SaveAs(stream);
-                    var content = stream.ToArray();
-
-                    return File(content, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
-                }
-            }
+            var usuarios = await usuarioNegocio.ObtenerUsuariosExcel();            
+            return File(usuarios, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
         }
 
         private async Task<List<SelectListItem>> obtenerRoles(UsusarioParametroDto param)

@@ -755,6 +755,7 @@
       "Dominio.ReglaNegocio/1.0.0": {
         "dependencies": {
           "AutoMapper": "8.1.1",
+          "ClosedXML": "0.95.3",
           "Dominio.Contratos": "1.0.0",
           "InfraEstructura.Contratos": "1.0.0",
           "InfraEstructura.Transversal": "1.0.0",

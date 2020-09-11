@@ -86,7 +86,7 @@ using InfraEstructura.Transversal;
 #line default
 #line hidden
             BeginContext(375, 68, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "78ab9a66f4ea4381b2ae6fef3227545c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e86aff7d476a48e6b437a010088aedf2", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -124,7 +124,7 @@ using InfraEstructura.Transversal;
                         ");
             EndContext();
             BeginContext(1423, 64, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e453fbc5e85e4ea39a4b3dc0be748d0b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7232a36bf3f74a67866136e3984ffe62", async() => {
                 BeginContext(1448, 30, true);
                 WriteLiteral("..:: Seleccione un Filtro ::..");
                 EndContext();
@@ -149,7 +149,7 @@ using InfraEstructura.Transversal;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(1513, 30, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "12fa0700daca44e9a9ab9de53a6ee74c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "82d77b4e39b941c083ef4ea5090f5d51", async() => {
                 BeginContext(1529, 5, true);
                 WriteLiteral("Áreas");
                 EndContext();
@@ -171,7 +171,7 @@ using InfraEstructura.Transversal;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(1569, 34, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7898e838338f44249633e884029802bf", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d7beae70b6bc4d29bcb2e8beca77aea5", async() => {
                 BeginContext(1585, 9, true);
                 WriteLiteral("Documento");
                 EndContext();
@@ -217,7 +217,7 @@ using InfraEstructura.Transversal;
                             ");
             EndContext();
             BeginContext(2297, 62, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5e644e0b299e4517a14a6f724471f7f1", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ac809cf11ab6478088861f2de0b815de", async() => {
                 BeginContext(2322, 28, true);
                 WriteLiteral("..:: Seleccione un Área ::..");
                 EndContext();
@@ -242,7 +242,7 @@ using InfraEstructura.Transversal;
             WriteLiteral("\r\n                            ");
             EndContext();
             BeginContext(2389, 31, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ed96f87c2f15472e83d312f2882c9644", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98410ea7f18b4b81834a45bda324b781", async() => {
                 BeginContext(2406, 5, true);
                 WriteLiteral("TODAS");
                 EndContext();
@@ -273,7 +273,7 @@ using InfraEstructura.Transversal;
             WriteLiteral("                                ");
             EndContext();
             BeginContext(2550, 48, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a2e5d5d5c15d4e5394f8bb9e3a62f8a4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5ac23d763c8940689c9de2689f1f1f42", async() => {
                 BeginContext(2578, 11, false);
 #line 54 "C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\SaveDoc\Views\Documento\Index.cshtml"
                                                       Write(item.Nombre);
@@ -335,7 +335,7 @@ using InfraEstructura.Transversal;
     ");
             EndContext();
             BeginContext(3258, 43, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "15ef07a031b64aef84cea772cd4a45a7", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "95de63e11652465eb96242402d6f431e", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();
