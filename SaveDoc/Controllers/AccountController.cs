@@ -394,7 +394,7 @@ namespace SaveDoc.Controllers
                     workbook.SaveAs(stream);
                     var content = stream.ToArray();
 
-                    return File(content,"application/pdf");
+                    return File(content, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
                 }
             }
         }
