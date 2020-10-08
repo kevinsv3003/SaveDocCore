@@ -32,7 +32,7 @@ namespace InfraEstructuraRepositorios
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = query;
                     cmd.Parameters.Add("@nombreDoc", SqlDbType.VarChar).Value = doc.Nombre;
-                    cmd.Parameters.Add("@descripcionDoc", SqlDbType.VarChar).Value = doc.Descripcion;
+                    cmd.Parameters.Add("@descripcionDoc", SqlDbType.VarChar).Value = doc.Descripcion != null ? doc.Descripcion : "";
                     cmd.Parameters.Add("@fechaRegistro", SqlDbType.DateTime).Value = doc.FechaRegistro;
                     cmd.Parameters.Add("@areaId", SqlDbType.Int).Value = doc.AreaId;
                     cmd.Parameters.Add("@docByte", SqlDbType.VarBinary).Value = doc.DocumentoByte;
