@@ -16,5 +16,6 @@ namespace Dominio.Contratos
         Task<bool> ActualizarDocumento(DocumentoDto doc);
         Task<bool> EliminarDocumento(int id, out string mensaje);
         Task<byte[]> ObtenerDocByteById(int Id);
+        Task<DocumentoDto> ObtenerDocumentoByte(int documentoId);
     }
 }

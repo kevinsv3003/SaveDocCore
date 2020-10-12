@@ -1,11 +1,14 @@
 ﻿@model List<Dominio.EntidadesDto.UsuarioDto>
+@*<script src="~/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="~/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>*@
 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.21/af-2.3.5/b-1.6.3/b-colvis-1.6.3/b-html5-1.6.3/b-print-1.6.3/datatables.min.js"></script>
 
-<script src="~/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="~/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 
 <div class="row">
-    <div class=" col-md-12" >
+    <div class=" col-md-12">
         <div class="box box-success shadow">
             <div class="box-header with-border">
                 <i class="fa fa-id-card-o"></i>
@@ -17,10 +20,14 @@
                     </button>
                 </div>
             </div>
-
-            <div id="contentUser" class="box-body box-profile" style="padding: 10px 20px 10px 20px">
-
-                <table id="tablaUsuario" class="table table-hover dataTable" style="border: 1px solid #dddddd;" role="grid">
+            
+            <div id="contentUser" class="box-body box-profile" style="padding: 10px 20px 10px 20px">                
+                <table id="tablaUsuario" class="table table-hover dataTable" style="border: 1px solid #dddddd;" role="grid">  
+                    @*<a asp-action="Exportar" asp-controller="Account" class="pull-right btn bg-olive grow"><i class="fa fa-file-excel-o"></i>  Exportar a Excel A</a>*@
+                    <button onclick="Exportar()" class="pull-right btn bg-olive grow">
+                        <i class="fa fa-file-excel-o"></i>  
+                        Exportar a Excel
+                    </button>
                     <thead>
                         <tr class="bg-olive">
                             <th class="text-center">
@@ -43,7 +50,7 @@
                             </th>
                         </tr>
                     </thead>
-                    <tbody >
+                    <tbody>
                         @foreach (var item in Model)
                         {
                             <tr>
@@ -85,7 +92,7 @@
 
 <script>
     $(function () {
-        EstiloTabla('#tablaUsuario');        
+        EstiloTabla('#tablaUsuario');
     });
 
     function _Eliminar(id) {
@@ -99,7 +106,7 @@
     function RecordarContra(email, username) {
         IniciarLoad('#contentUser');
         var model = { Email: email, userName: username }
-        var url = '@Url.Action("RecordarContraseña", "Account")';        
+        var url = '@Url.Action("RecordarContraseña", "Account")';
         $.ajax({
             type: "POST",
             url: url,
@@ -121,7 +128,7 @@
 
     function EliminarUsuario(Id) {
         IniciarLoad('#contentUser');
-        var url = '@Url.Action("EliminarUsuario", "Account")';        
+        var url = '@Url.Action("EliminarUsuario", "Account")';
         $.ajax({
             type: "POST",
             url: url,
@@ -139,6 +146,12 @@
                 FailGuardarJq(response);
             }
         });
-    }   
+    }
+
+    function Exportar() {
+        var host = window.location.origin;
+        var url = host + '/Account/Exportar';
+        window.open(url);
+    }
 
 </script>

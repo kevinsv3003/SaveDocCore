@@ -80,6 +80,11 @@
             display: inline-block;
             width: 130%;
         }
+        .dataTables_scrollBody{
+            position:relative;
+            overflow:hidden !important;
+            width:100%;
+        }
     </style>
 
 </head>
@@ -128,7 +133,7 @@
                                         @rol
                                     </p>
                                 </li>
-                             
+
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
@@ -167,7 +172,7 @@
                         <!-- Status -->
                         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                     </div>
-                </div>              
+                </div>
                 @*@Html.Partial("_MainMenu")*@
                 <partial name="_MainMenu" />
 
@@ -217,8 +222,14 @@
     <script src="~/bower_components/inputmask/dist/min/inputmask/inputmask.min.js"></script>
 
     @*datatables*@
-    <script src="~/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="~/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    @*<script src="~/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+        <script src="~/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>*@
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.21/af-2.3.5/b-1.6.3/b-colvis-1.6.3/b-html5-1.6.3/b-print-1.6.3/datatables.min.js"></script>
+
+
 
 
     <!-- AdminLTE App -->
@@ -256,6 +267,25 @@
                 "info": true,
                 "autoWidth": false,
                 "scrollX": true,
+                buttons: [
+                    {
+                        extend: 'pdfHtml5',
+                        text: '<button class="btn bg-red grow"><i class="fa fa-file-pdf-o"></i>  Exportar a PDF</button>',
+                        title: 'ArchivoPDFDatos',
+                        exportOptions: {
+                            columns: [0, 1, 2, 3, 4]
+                        }
+                    },
+                    {
+                        extend: 'excelHtml5',
+                        text: '<button style="margin-left:-12px" class="btn bg-olive grow"><i class="fa fa-file-excel-o"></i>  Exportar a Excel</button>',
+                        title: 'ArchivoExcelDatos',
+                        autoFilter: true,
+                        exportOptions: {
+                            columns: [0, 1, 2, 3, 4]
+                        }
+                    }
+                ],
                 language: {
                     "decimal": "",
                     "emptyTable": "No hay información",

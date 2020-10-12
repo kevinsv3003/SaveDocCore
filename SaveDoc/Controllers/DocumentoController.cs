@@ -42,20 +42,6 @@ namespace SaveDoc.Controllers
             return View();
         }
 
-        public async Task<IActionResult> Index2()
-        {
-            var listaDoc = await documentoDom.ObtenerTodosDocumentos();
-            _PaginadorDocumentos = PaginacionCards(1, listaDoc.Count, listaDoc);
-            ViewBag.documentos = _PaginadorDocumentos;
-
-            var areas = await areaDom.ObtenerListaArea();
-            ViewBag.Area = areas;
-
-
-            return View();
-        }
-
-
         public async Task<IActionResult> _BuscarDocumentoPorArea([FromBody] int areaId)
         {
             try
@@ -137,10 +123,8 @@ namespace SaveDoc.Controllers
 
         public async Task<IActionResult> _DescargarDocumento(int id)
         {
-            // var documento = await documentoDom.ObtenerDocByteById(id);
-            var documento = await documentoDom.ObtenerDocumentoPorId(id);
+            var documento = await documentoDom.ObtenerDocumentoByte(id);
             return File(documento.Doc, documento.Extension);
-
         }
 
         [RequestFormLimits(MultipartBodyLengthLimit = 209715200)]

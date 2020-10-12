@@ -60,3 +60,7 @@ C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\InfraEstructuraRepositorios
 C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\InfraEstructuraRepositorios\obj\Debug\netcoreapp2.1\InfraEstructuraRepositorios.csproj.CopyComplete
 C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\InfraEstructuraRepositorios\obj\Debug\netcoreapp2.1\InfraEstructuraRepositorios.dll
 C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\InfraEstructuraRepositorios\obj\Debug\netcoreapp2.1\InfraEstructuraRepositorios.pdb
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\InfraEstructuraRepositorios\bin\Debug\netcoreapp2.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\InfraEstructuraRepositorios\bin\Debug\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\InfraEstructuraRepositorios\bin\Debug\netcoreapp2.1\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\InfraEstructuraRepositorios\bin\Debug\netcoreapp2.1\System.Data.SqlClient.xml

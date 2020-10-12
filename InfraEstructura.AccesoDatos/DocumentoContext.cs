@@ -25,5 +25,6 @@ namespace InfraEstructura.AccesoDatos
 
         public DbSet<Area> Areas { get; set; }
         public DbSet<Documento> Documentos { get; set; }
+        public DbSet<LogTransaccion> LogTransacciones { get; set; }
     }
 }

@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
+using ClosedXML.Excel;
 using Dominio.Contratos;
 using Dominio.EntidadesDto;
 using Entidades.Entidades;
@@ -340,6 +343,11 @@ namespace SaveDoc.Controllers
             return Json(mensaje);
         }
 
+        public async Task<IActionResult> Exportar()
+        {
+            var usuarios = await usuarioNegocio.ObtenerUsuariosExcel();            
+            return File(usuarios, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+        }
 
         private async Task<List<SelectListItem>> obtenerRoles(UsusarioParametroDto param)
         {
@@ -361,3 +369,5 @@ namespace SaveDoc.Controllers
         }
     }
 }
+
+

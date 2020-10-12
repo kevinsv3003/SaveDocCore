@@ -31,7 +31,8 @@ namespace Dominio.ReglaNegocio
                 documento.DocumentoByte = General.GetByteArrayFromDoc(doc.FileDoc);
                 var retorno = await Task.Factory.StartNew(() =>
                 {
-                    unidadTrabajo.DocumentoRepositorio.Insertar(documento);
+                    //unidadTrabajo.DocumentoRepositorio.Insertar(documento);
+                    unidadTrabajo.DocumentoRepositorio.InsertarDocumento(documento);
                     unidadTrabajo.commit();
                     return true;
                 });
@@ -50,11 +51,7 @@ namespace Dominio.ReglaNegocio
             try
             {
                 var documento = unidadTrabajo.DocumentoRepositorio.BuscarPorId(doc.DocumentoId);
-                if (doc.FileDoc != null)
-                {
-                    documento.Extension = doc.FileDoc.ContentType;
-                    documento.DocumentoByte = General.GetByteArrayFromDoc(doc.FileDoc);
-                }
+
                 documento.Nombre = doc.Nombre;
                 documento.Descripcion = doc.Descripcion;
                 documento.AreaId = doc.AreaId;
@@ -62,6 +59,10 @@ namespace Dominio.ReglaNegocio
                 var retorno = await Task.Factory.StartNew(() =>
                 {
                     unidadTrabajo.DocumentoRepositorio.Actualizar(documento);
+
+                    if (doc.FileDoc != null)
+                        unidadTrabajo.DocumentoRepositorio.ActualizarDocByte(doc.DocumentoId, doc.FileDoc.ContentType, General.GetByteArrayFromDoc(doc.FileDoc));
+                    
                     unidadTrabajo.commit();
                     return true;
                 });
@@ -109,8 +110,8 @@ namespace Dominio.ReglaNegocio
                                  Nombre = d.Nombre,
                                  Descripcion = d.Descripcion,
                                  NombreArea = a.Nombre,
-                                 Doc = d.DocumentoByte,
-                                 Extension = d.Extension
+                                 //Doc = d.DocumentoByte,
+                                 //Extension = d.Extension
                              }).FirstOrDefault();
 
                 return (resultado != null) ? resultado : new DocumentoDto();
@@ -137,8 +138,8 @@ namespace Dominio.ReglaNegocio
                                  Nombre = d.Nombre,
                                  Descripcion = d.Descripcion,
                                  NombreArea = a.Nombre,
-                                 Doc = d.DocumentoByte,
-                                 Extension = d.Extension,
+                                 //Doc = d.DocumentoByte,
+                                 //Extension = d.Extension,
                                  Fondo = a.Fondo
                              }).ToList();
 
@@ -167,8 +168,8 @@ namespace Dominio.ReglaNegocio
                                  Nombre = d.Nombre,
                                  Descripcion = d.Descripcion,
                                  NombreArea = a.Nombre,
-                                 Doc = d.DocumentoByte,
-                                 Extension = d.Extension,
+                                 //Doc = d.DocumentoByte,
+                                 //Extension = d.Extension,
                                  Fondo = a.Fondo
                              }).ToList();
 
@@ -197,8 +198,8 @@ namespace Dominio.ReglaNegocio
                                  Nombre = d.Nombre,
                                  Descripcion = d.Descripcion,
                                  NombreArea = a.Nombre,
-                                 Doc = d.DocumentoByte,
-                                 Extension = d.Extension,
+                                 //Doc = d.DocumentoByte,
+                                 //Extension = d.Extension,
                                  Fondo = a.Fondo
                              }).ToList();
 
@@ -227,6 +228,26 @@ namespace Dominio.ReglaNegocio
             {
                 mensaje = ("Ocurrió un problema al eliminar el documento");
                 throw new Exception("Ocurrió un problema al eliminar el documento"); throw;
+            }
+        }
+
+        public async Task<DocumentoDto> ObtenerDocumentoByte(int documentoId)
+        {
+            var resultado = new DocumentoDto();
+            try
+            {
+                var doc = await unidadTrabajo.DocumentoRepositorio.ObtenerDocumentoByte(documentoId);
+
+                if (doc != null)
+                {
+                    resultado.Extension = doc.Extension;
+                    resultado.Doc = doc.DocumentoByte;
+                }
+                return (resultado != null) ? resultado : new DocumentoDto();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocurrió un problema al consultar los documentos");
             }
         }
     }

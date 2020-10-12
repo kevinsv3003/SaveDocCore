@@ -20,7 +20,7 @@ namespace Entidades.Entidades
         [Column(TypeName = "varchar(500)")]
         public string Descripcion { get; set; }
 
-        [Required]
+        [NotMapped]
         public byte[] DocumentoByte { get; set; }
 
         [Column(TypeName = "varchar(200)")]

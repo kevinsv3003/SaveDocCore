@@ -35,18 +35,10 @@ namespace InfraEstructura.Transversal
 
                 using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
                 {
-                    smtp.Credentials = new NetworkCredential(de, "KR5684684P");
+                    smtp.Credentials = new NetworkCredential(de, "P5684684**rkp");
                     smtp.EnableSsl = true;
                     smtp.Send(mail);
                 }
-
-                //SmtpClient smtp = new SmtpClient("smtp.gmail.com");
-                //smtp.EnableSsl = true;
-                //smtp.UseDefaultCredentials = false;
-                //smtp.Port = 587;
-                //smtp.Credentials = new System.Net.NetworkCredential(de, "KR5684684P");
-                //smtp.Send(mail);
-                //smtp.Dispose();
             }
             catch (Exception ex)
             {
