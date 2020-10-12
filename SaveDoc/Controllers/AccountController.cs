@@ -321,6 +321,15 @@ namespace SaveDoc.Controllers
                 var resetPass = await _userManager.ChangePasswordAsync(usuario, login.Password, login.NewPassword);
                 if (resetPass.Succeeded)
                 {
+                    var valoresCuerpo = new ValoresCorreoContra()
+                    {
+                        NombreCompleto = usuario.Nombres + " " + usuario.Apellidos,
+                        NombreUsuario = usuario.UserName,
+                        Contraseña = login.NewPassword
+                    };
+                    string cuerpo = General.ObtenerHtml("CorreoContra.cshtml", valoresCuerpo);
+                    General.EnviarMensaje(usuario.Email, "Restauración de Contraseña", cuerpo);
+
                     Response.StatusCode = (int)HttpStatusCode.OK;
                     mensaje = "Se ha actualizado su contraseña con éxito!";
                 }
@@ -345,7 +354,7 @@ namespace SaveDoc.Controllers
 
         public async Task<IActionResult> Exportar()
         {
-            var usuarios = await usuarioNegocio.ObtenerUsuariosExcel();            
+            var usuarios = await usuarioNegocio.ObtenerUsuariosExcel();
             return File(usuarios, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
         }
 

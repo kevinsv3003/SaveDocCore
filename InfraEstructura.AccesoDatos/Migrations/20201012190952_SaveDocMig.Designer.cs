@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace InfraEstructura.AccesoDatos.Migrations
 {
     [DbContext(typeof(DocumentoContext))]
-    [Migration("20200723203833_migration")]
-    partial class migration
+    [Migration("20201012190952_SaveDocMig")]
+    partial class SaveDocMig
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -57,9 +57,6 @@ namespace InfraEstructura.AccesoDatos.Migrations
                     b.Property<string>("Descripcion")
                         .HasColumnType("varchar(500)")
                         .HasMaxLength(200);
-
-                    b.Property<byte[]>("DocumentoByte")
-                        .IsRequired();
 
                     b.Property<string>("Extension")
                         .HasColumnType("varchar(200)");

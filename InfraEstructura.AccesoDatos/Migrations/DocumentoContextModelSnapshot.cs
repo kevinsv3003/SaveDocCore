@@ -56,9 +56,6 @@ namespace InfraEstructura.AccesoDatos.Migrations
                         .HasColumnType("varchar(500)")
                         .HasMaxLength(200);
 
-                    b.Property<byte[]>("DocumentoByte")
-                        .IsRequired();
-
                     b.Property<string>("Extension")
                         .HasColumnType("varchar(200)");
 
