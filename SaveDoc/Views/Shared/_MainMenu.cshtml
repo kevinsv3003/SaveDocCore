@@ -10,12 +10,23 @@
             <i class="fa fa-users"></i> <span>Usuarios</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
-            </span> 
+            </span>
         </a>
         <ul class="treeview-menu">
-            <li><a href="@Url.Action("AdministrarCuentas","Account")">
+            <li>
+                <a href="@Url.Action("AdministrarCuentas","Account")">
                     <i class="fa fa-user-plus"></i>
-                Administrar Cuentas</a></li>
+                    Administrar Cuentas
+                </a>
+            </li>
+
+            <li>
+                <a href="@Url.Action("AdministrarRoles","Account")">
+                    <i class="fa fa-gears"></i>
+                    Administrar Roles
+                </a>
+            </li>
         </ul>
+        
     </li>
 </ul>

@@ -28,7 +28,7 @@ namespace SaveDoc.Controllers
             this.documentoDom = documento;
         }
 
-        [Authorize(Roles = "Administrador")]
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             var listaDoc = await documentoDom.ObtenerTodosDocumentos();
@@ -121,6 +121,7 @@ namespace SaveDoc.Controllers
             }
         }
 
+        [Authorize]
         public async Task<IActionResult> _DescargarDocumento(int id)
         {
             var documento = await documentoDom.ObtenerDocumentoByte(id);

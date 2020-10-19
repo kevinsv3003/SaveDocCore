@@ -179,6 +179,23 @@ namespace SaveDoc.Controllers
             }
         }
 
+        [Authorize]
+        public async Task<IActionResult> _FormEditRol([FromBody] UsusarioParametroDto parametro)
+        {
+            try
+            {
+                ViewBag.Origen = parametro.Origen;
+                var rolDto = (parametro.Origen != 2) ? await usuarioNegocio.BuscarRolPorIdRol(parametro.IdRol) : new RolDto();
+
+                return PartialView(rolDto);
+            }
+            catch (Exception ex)
+            {
+                Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                return Json(ex.Message);
+            }
+        }
+
         public async Task<IActionResult> EliminarUsuario([FromBody] string Id)
         {
             Thread.Sleep(1500);
@@ -205,12 +222,52 @@ namespace SaveDoc.Controllers
             return Json(mensaje);
         }
 
+        public async Task<IActionResult> EliminarRol([FromBody] string Id)
+        {
+            Thread.Sleep(1500);
+            var mensaje = string.Empty;
+            try
+            {
+                var retorno = await usuarioNegocio.EliminarRol(Id);
+                if (retorno)
+                {
+                    Response.StatusCode = (int)HttpStatusCode.OK;
+                    mensaje = "Se eliminó el rol correctamente!!";
+                }
+                else
+                {
+                    Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                    mensaje = "Se generó un error al eliminar el rol!!";
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                return Json(ex.Message);
+            }
+            return Json(mensaje);
+        }
+
         public IActionResult _TablaUsuarios()
         {
             try
             {
                 var usuarios = usuarioNegocio.ObtenerUsuarios();
                 return PartialView(usuarios);
+            }
+            catch (Exception ex)
+            {
+                Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                return Json(new { message = ex.Message });
+            }
+        }
+
+        public IActionResult _TablaRoles()
+        {
+            try
+            {
+                var roles = usuarioNegocio.ObtenerRoles();
+                return PartialView(roles);
             }
             catch (Exception ex)
             {
@@ -279,6 +336,60 @@ namespace SaveDoc.Controllers
             return Json(mensaje);
         }
 
+        [Authorize (Roles ="Administrador")]
+        public async Task<IActionResult> GuardarRol(RolDto rol)
+        {
+            Thread.Sleep(1500);
+            var mensaje = string.Empty;
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    if (rol.IdRol != null)
+                    {
+                        var actualizado = await usuarioNegocio.ActualizarRol(rol);
+                        if (actualizado)
+                        {
+                            Response.StatusCode = (int)HttpStatusCode.OK;
+                            mensaje = "Se ha actualizado su información correctamente!!";
+                        }
+                        else
+                        {
+                            Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                            mensaje = "Se produjo un error al actualizar su información!!";
+                        }
+                    }
+                    else
+                    {
+
+                        var guardado = await usuarioNegocio.GuardarRol(rol);
+                        if (guardado)
+                        {
+                            Response.StatusCode = (int)HttpStatusCode.OK;
+                            mensaje = "Se ha guardado el rol correctamente!!";
+                        }
+                        else
+                        {
+                            Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                            mensaje = "Se produjo un error al guardar el rol!!";
+                        }
+
+                    }
+                }
+                else
+                {
+                    Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                    mensaje = "Favor verifique todos los campos!!";
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                return Json(ex.Message);
+            }
+            return Json(mensaje);
+        }
+
         [Authorize]
         public async Task<IActionResult> _DatosPersonales()
         {
@@ -300,6 +411,12 @@ namespace SaveDoc.Controllers
 
         [Authorize(Roles = "Administrador")]
         public IActionResult AdministrarCuentas()
+        {
+            return View();
+        }
+
+        [Authorize(Roles = "Administrador")]
+        public IActionResult AdministrarRoles()
         {
             return View();
         }

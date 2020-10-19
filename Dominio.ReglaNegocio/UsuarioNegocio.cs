@@ -41,7 +41,43 @@ namespace Dominio.ReglaNegocio
             }
             catch (Exception ex)
             {
-                throw(ex);
+                throw (ex);
+            }
+            return resultado;
+        }
+
+        public List<RolDto> ObtenerRoles()
+        {
+            var resultado = new List<RolDto>();
+            try
+            {
+                var roles = _roleManager.Roles.ToList();
+                foreach (var item in roles)
+                {
+                    var rol = new RolDto() { Nombre = item.Name, IdRol = item.Id };
+                    resultado.Add(rol);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            return resultado;
+        }
+
+        public async Task<RolDto> BuscarRolPorIdRol(string IdRol)
+        {
+            var resultado = new RolDto();
+            try
+            {
+                var roles = await _roleManager.FindByIdAsync(IdRol);
+
+                resultado = new RolDto() { Nombre = roles.Name, IdRol = roles.Id };                    
+                
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
             }
             return resultado;
         }
@@ -51,7 +87,7 @@ namespace Dominio.ReglaNegocio
             bool respuesta = false;
             try
             {
-                var usuario =  await _userManager.FindByIdAsync(usuariodto.Id);
+                var usuario = await _userManager.FindByIdAsync(usuariodto.Id);
 
                 usuario.Nombres = usuariodto.Nombres;
                 usuario.Apellidos = usuariodto.Apellidos;
@@ -62,10 +98,10 @@ namespace Dominio.ReglaNegocio
                 usuario.PhoneNumber = usuariodto.PhoneNumber;
                 usuario.Email = usuariodto.Email;
                 usuario.Edad = General.ObtenerEdadActual(usuariodto.FechaNacimiento);
-                
+
                 var rolUsuario = await obtenerRolUsuario(usuario);
-                var borrarRol = (rolUsuario != string.Empty) ? await _userManager.RemoveFromRoleAsync(usuario, rolUsuario) : null;
-                var AsignarRol = (borrarRol.Succeeded) ? await _userManager.AddToRoleAsync(usuario, usuariodto.Rol) : null;
+                var borrarRol = (rolUsuario != string.Empty) ? await _userManager.RemoveFromRoleAsync(usuario, rolUsuario) : new IdentityResult();
+                var AsignarRol = (borrarRol.Succeeded || rolUsuario == string.Empty) ? await _userManager.AddToRoleAsync(usuario, usuariodto.Rol) : new IdentityResult();
                 var Actualizado = await _userManager.UpdateAsync(usuario);
 
                 respuesta = Actualizado.Succeeded && AsignarRol.Succeeded;
@@ -77,6 +113,41 @@ namespace Dominio.ReglaNegocio
             return respuesta;
         }
 
+        public async Task<bool> ActualizarRol(RolDto rolDto)
+        {
+            bool respuesta = false;
+            try
+            {
+                var Rol = await _roleManager.FindByIdAsync(rolDto.IdRol);
+                Rol.Name = rolDto.Nombre;
+                var Actualizado = await _roleManager.UpdateAsync(Rol);
+                respuesta = Actualizado.Succeeded;
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            return respuesta;
+        }
+
+
+        public async Task<bool> GuardarRol(RolDto roldto)
+        {
+            bool respuesta = false;
+            try
+            {
+                var rol = new IdentityRole() { Name = roldto.Nombre };
+                var guardoRol = await _roleManager.CreateAsync(rol);
+                respuesta = guardoRol.Succeeded;            
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            return respuesta;
+        }
+
+
         public async Task<bool> GuardarUsuario(UsuarioDto usuarioDto)
         {
             bool respuesta = false;
@@ -84,10 +155,17 @@ namespace Dominio.ReglaNegocio
             {
                 usuarioDto.Edad = General.ObtenerEdadActual(usuarioDto.FechaNacimiento);
                 var usuario = Mapper.Map<UsuarioDto, UsuarioApp>(usuarioDto);
-                var guardoUsuario = await _userManager.CreateAsync(usuario,usuarioDto.contra);
-                var rolAsignado = await _userManager.AddToRoleAsync(usuario, usuarioDto.Rol);
-
-                respuesta = guardoUsuario.Succeeded && rolAsignado.Succeeded;
+                var guardoUsuario = await _userManager.CreateAsync(usuario, usuarioDto.contra);
+                if (guardoUsuario.Succeeded)
+                {
+                    var rolAsignado = await _userManager.AddToRoleAsync(usuario, usuarioDto.Rol);
+                    respuesta = guardoUsuario.Succeeded && rolAsignado.Succeeded;
+                }
+                else if (guardoUsuario.Errors.FirstOrDefault().Code.Equals("PasswordTooShort"))
+                {
+                    var mensaje = ("Se produjo un error al restaurar su contraseña!! \nDebe de ser mayor de 5 caracteres.");
+                    throw new ArgumentException(mensaje);
+                }
             }
             catch (Exception ex)
             {
@@ -105,6 +183,23 @@ namespace Dominio.ReglaNegocio
                 var EliminoUsuario = await _userManager.DeleteAsync(usuario);
 
                 respuesta = EliminoUsuario.Succeeded;
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            return respuesta;
+        }
+
+        public async Task<bool> EliminarRol(string Id)
+        {
+            bool respuesta = false;
+            try
+            {
+                var rol = await _roleManager.FindByIdAsync(Id);
+                var EliminoRol = await _roleManager.DeleteAsync(rol);
+
+                respuesta = EliminoRol.Succeeded;
             }
             catch (Exception ex)
             {
