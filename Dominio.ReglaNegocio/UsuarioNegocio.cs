@@ -130,7 +130,6 @@ namespace Dominio.ReglaNegocio
             return respuesta;
         }
 
-
         public async Task<bool> GuardarRol(RolDto roldto)
         {
             bool respuesta = false;
@@ -146,7 +145,6 @@ namespace Dominio.ReglaNegocio
             }
             return respuesta;
         }
-
 
         public async Task<bool> GuardarUsuario(UsuarioDto usuarioDto)
         {
