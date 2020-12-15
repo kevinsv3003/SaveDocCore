@@ -30,6 +30,7 @@ namespace InfraEstructuraRepositorios
                     // Procedimiento para actualizar documento
                     const string query = @"InsertarDocumento";
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandTimeout = 0;                    
                     cmd.CommandText = query;
                     cmd.Parameters.Add("@nombreDoc", SqlDbType.VarChar).Value = doc.Nombre;
                     cmd.Parameters.Add("@descripcionDoc", SqlDbType.VarChar).Value = doc.Descripcion != null ? doc.Descripcion : "";
@@ -37,7 +38,7 @@ namespace InfraEstructuraRepositorios
                     cmd.Parameters.Add("@areaId", SqlDbType.Int).Value = doc.AreaId;
                     cmd.Parameters.Add("@docByte", SqlDbType.VarBinary).Value = doc.DocumentoByte;
                     cmd.Parameters.Add("@Extension", SqlDbType.VarChar).Value = (doc.Extension == "application/octet-stream") ? "text/plain" : doc.Extension;
-
+                    
                     cmd.ExecuteNonQuery();
                     retorno = true;
                 }
@@ -59,6 +60,7 @@ namespace InfraEstructuraRepositorios
                     // Procedimiento para actualizar documento
                     const string query = @"ActualizarDocumentoByte";
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandTimeout = 0;
                     cmd.CommandText = query;
                     cmd.Parameters.Add("@documentoId", SqlDbType.Int).Value = docId;
                     cmd.Parameters.Add("@docByte", SqlDbType.VarBinary).Value = documento;
@@ -87,6 +89,7 @@ namespace InfraEstructuraRepositorios
                 {
                     const string query = @"ObtenerDocumentoByte";
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandTimeout = 0;
                     cmd.CommandText = query;
                     cmd.Parameters.Add("@documentoId", SqlDbType.Int).Value = documentoId;
 
