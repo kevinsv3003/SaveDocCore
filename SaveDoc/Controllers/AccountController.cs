@@ -98,7 +98,7 @@ namespace SaveDoc.Controllers
         }
 
         [AllowAnonymous]
-        public async Task<IActionResult> RecordarContraseña([FromBody]LoginViewDto model)
+        public async Task<IActionResult> RecordarContraseña([FromForm]LoginViewDto model)
         {
             Thread.Sleep(1500);
             var mensaje = string.Empty;

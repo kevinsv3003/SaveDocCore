@@ -35,8 +35,9 @@ namespace InfraEstructura.Transversal
 
                 using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
                 {
-                    smtp.Credentials = new NetworkCredential(de, "P5684684**rkp");
                     smtp.EnableSsl = true;
+                    smtp.UseDefaultCredentials = false;
+                    smtp.Credentials = new NetworkCredential(de, "Ksv300399*");
                     smtp.Send(mail);
                 }
             }
@@ -49,7 +50,7 @@ namespace InfraEstructura.Transversal
         public static string GenerarCodigo()
         {
             Random obj = new Random();
-            string sCadena = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+            string sCadena = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_,.<>+-*/¡!#$%&()=¿?";
             int longitud = sCadena.Length;
             char cletra;
             int nlongitud = 6;
@@ -134,7 +135,7 @@ namespace InfraEstructura.Transversal
             {
                 var PathBodyReport = string.Format(Path, NameViewDocument);
                 Reporte = File.ReadAllText(PathBodyReport);
-                result = Engine.Razor.RunCompile(Reporte,"templateKey",null,Model);
+                result = Engine.Razor.RunCompile(Reporte, "templateKey", null, Model);
             }
             catch (Exception ex)
             {
