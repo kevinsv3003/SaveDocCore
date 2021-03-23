@@ -13,13 +13,16 @@ namespace InfraEstructuraRepositorios
 {
     public class DocumentoRepositorio : BaseRepositorio<Documento>, IDocumento
     {
-        public  DocumentoRepositorio(DbContext context) : base(context)
+        public IConfiguration Configuration { get; }
+
+        public DocumentoRepositorio(DbContext context, IConfiguration configuration) : base(context)
         {
+            this.Configuration = configuration; 
         }
 
         public bool InsertarDocumento(Documento doc)
         {
-            var connection = @"Server=(localdb)\MSSQLLocalDB;Database=MiProyectoCoreDB;Trusted_Connection=True;MultipleActiveResultSets=true";
+            var connection = Configuration.GetConnectionString("MiProyectoCore"); // @"Server=(localdb)\MSSQLLocalDB;Database=MiProyectoCoreDB;Trusted_Connection=True;MultipleActiveResultSets=true";
             var retorno = false;
             using (var conn = new SqlConnection(connection))
             {
@@ -30,6 +33,7 @@ namespace InfraEstructuraRepositorios
                     // Procedimiento para actualizar documento
                     const string query = @"InsertarDocumento";
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandTimeout = 0;                    
                     cmd.CommandText = query;
                     cmd.Parameters.Add("@nombreDoc", SqlDbType.VarChar).Value = doc.Nombre;
                     cmd.Parameters.Add("@descripcionDoc", SqlDbType.VarChar).Value = doc.Descripcion != null ? doc.Descripcion : "";
@@ -37,7 +41,7 @@ namespace InfraEstructuraRepositorios
                     cmd.Parameters.Add("@areaId", SqlDbType.Int).Value = doc.AreaId;
                     cmd.Parameters.Add("@docByte", SqlDbType.VarBinary).Value = doc.DocumentoByte;
                     cmd.Parameters.Add("@Extension", SqlDbType.VarChar).Value = (doc.Extension == "application/octet-stream") ? "text/plain" : doc.Extension;
-
+                    
                     cmd.ExecuteNonQuery();
                     retorno = true;
                 }
@@ -48,7 +52,7 @@ namespace InfraEstructuraRepositorios
 
         public bool ActualizarDocByte(int docId, string extension, byte[] documento)
         {
-            var connection = @"Server=(localdb)\MSSQLLocalDB;Database=MiProyectoCoreDB;Trusted_Connection=True;MultipleActiveResultSets=true";
+            var connection = Configuration.GetConnectionString("MiProyectoCore"); // @"Server=(localdb)\MSSQLLocalDB;Database=MiProyectoCoreDB;Trusted_Connection=True;MultipleActiveResultSets=true";
             var retorno = false;
             using (var conn = new SqlConnection(connection))
             {
@@ -59,6 +63,7 @@ namespace InfraEstructuraRepositorios
                     // Procedimiento para actualizar documento
                     const string query = @"ActualizarDocumentoByte";
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandTimeout = 0;
                     cmd.CommandText = query;
                     cmd.Parameters.Add("@documentoId", SqlDbType.Int).Value = docId;
                     cmd.Parameters.Add("@docByte", SqlDbType.VarBinary).Value = documento;
@@ -76,7 +81,7 @@ namespace InfraEstructuraRepositorios
         {
             var doc = new Documento();
             byte[] documento = { };
-            var connection = @"Server=(localdb)\MSSQLLocalDB;Database=MiProyectoCoreDB;Trusted_Connection=True;MultipleActiveResultSets=true";
+            var connection = Configuration.GetConnectionString("MiProyectoCore"); // @"Server=(localdb)\MSSQLLocalDB;Database=MiProyectoCoreDB;Trusted_Connection=True;MultipleActiveResultSets=true";
 
 
             using (var conn = new SqlConnection(connection))
@@ -87,6 +92,7 @@ namespace InfraEstructuraRepositorios
                 {
                     const string query = @"ObtenerDocumentoByte";
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandTimeout = 0;
                     cmd.CommandText = query;
                     cmd.Parameters.Add("@documentoId", SqlDbType.Int).Value = documentoId;
 

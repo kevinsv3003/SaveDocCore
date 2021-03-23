@@ -216,3 +216,6 @@ C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\SaveDoc\obj\Debug\netcoreap
 C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\SaveDoc\obj\Debug\netcoreapp2.1\SaveDoc.pdb
 C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\SaveDoc\obj\Debug\netcoreapp2.1\Razor\Views\Documento\nuevaVistaDoc.g.cshtml.cs
 C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\SaveDoc\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\SaveDoc\obj\Debug\netcoreapp2.1\Razor\Views\Account\_FormEditRol.g.cshtml.cs
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\SaveDoc\obj\Debug\netcoreapp2.1\Razor\Views\Account\AdministrarRoles.g.cshtml.cs
+C:\Users\ksilva\Desktop\Proyectos\GitHub\SaveDocCore\SaveDoc\obj\Debug\netcoreapp2.1\Razor\Views\Account\_TablaRoles.g.cshtml.cs

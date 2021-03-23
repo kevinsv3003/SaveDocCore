@@ -136,6 +136,7 @@
             contentType: "application/json; charset=utf-8",
             dataType: "html",
             success: function (response) {
+                console.log(response);
                 ShowUsuarios();
                 SuccessGuardarJq(response, vacio);
                 CerrarLoad('#contentUser');

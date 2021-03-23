@@ -45,6 +45,8 @@
                                 <div class="col-md-6">
                                     <label>Nombres:</label>
                                     <div id="contentNombre" class="form-group">
+                                        <label id="lblSuccessNombre" style="display:none; font-size:small" class="control-label" for="NombreProducto"><i class="fa fa-check"></i> Formato Correcto!</label>
+                                        <label id="lblErrorNombre" style="display:none;  font-size:small" class="control-label" for="Nombres"><i class="fa fa-times-circle-o"></i> Formato Incorrecto!</label>
                                         <input type="text" asp-for="Id" class="form-control" readonly="readonly" style="display:none">
                                         <input type="text" asp-for="Nombres" class="form-control" maxlength="200" placeholder="Escriba el nombre del Usuario">
                                     </div>
@@ -52,7 +54,9 @@
 
                                 <div class="col-md-6">
                                     <label>Apellidos:</label>
-                                    <div id="contentNombre" class="form-group">
+                                    <div id="contentApellido" class="form-group">
+                                        <label id="lblSuccessApellido" style="display:none; font-size:small" class="control-label" for="NombreProducto"><i class="fa fa-check"></i> Formato Correcto!</label>
+                                        <label id="lblErrorApellido" style="display:none;  font-size:small" class="control-label" for="Nombres"><i class="fa fa-times-circle-o"></i> Formato Incorrecto!</label>
                                         <input type="text" asp-for="Apellidos" class="form-control" maxlength="200" placeholder="Escriba el nombre del Usuario">
                                     </div>
                                 </div>
@@ -61,7 +65,8 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <label>Nombre de Usuario:</label>
-                                    <div id="contentNombre" class="form-group">
+                                    <div id="contentUsuario" class="form-group">
+                                        <label id="lblErrorUsuario" style="display:none;  font-size:small" class="control-label" for="Nombres"><i class="fa fa-times-circle-o"></i> Formato Incorrecto!</label>
                                         @if (ViewBag.Origen == 1)
                                         {
                                             <input type="text" asp-for="OrigenForm" class="form-control" readonly="readonly" value="1" style="display:none">
@@ -88,7 +93,25 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label>Rol:</label>
-                                    @if (ViewBag.Origen == 1)
+                                    <div id="contentRol">
+                                        <label id="lblErrorRol" style="display:none;  font-size:small" class="control-label" for="Nombres"><i class="fa fa-times-circle-o"></i> Formato Incorrecto!</label>
+                                        @if (ViewBag.Origen == 1 && ViewBag.Rol != "Administrador")
+                                        {
+                                            @Html.DropDownListFor(r => r.Rol,
+                                                         (IEnumerable<SelectListItem>)(ViewBag.Roles),
+                                                         "..:: Seleccione un Rol ::..",
+                                                         new { @class = "form-control", @disabled = "disabled" })
+                                        }
+                                        else
+                                        {
+                                            @Html.DropDownListFor(r => r.Rol,
+                                                                            (IEnumerable<SelectListItem>)(ViewBag.Roles),
+                                                                            "..:: Seleccione un Rol ::..",
+                                                                            new { @class = "form-control" })
+                                        }
+                                    </div>
+
+                                    @*@if (ViewBag.Origen == 1)
                                     {
                                         @if (ViewBag.Rol == "Administrador")
                                         {
@@ -117,7 +140,8 @@
                                                      "..:: Seleccione un Rol ::..",
                                                      new { @class = "form-control"})
                                         </div>
-                                    }
+                                    }*@
+
                                 </div>
                             </div>
                             @if (ViewBag.Origen == 2)
@@ -125,14 +149,16 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label>Contraseña:</label>
-                                        <div id="contentNombre" class="form-group">
+                                        <div id="contentContra" class="form-group">
+                                            <label id="lblErrorContra" style="display:none;  font-size:small" class="control-label" for="Nombres"><i class="fa fa-times-circle-o"></i> Formato Incorrecto!</label>
                                             <input type="password" autocomplete="off" asp-for="contra" class="form-control" maxlength="200" placeholder="Escriba la contraseña">
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
                                         <label>Contraseña:</label>
-                                        <div id="contentNombre" class="form-group">
+                                        <div id="contentContra2" class="form-group">
+                                            <label id="lblErrorContra2" style="display:none;  font-size:small" class="control-label" for="Nombres"><i class="fa fa-times-circle-o"></i> Formato Incorrecto!</label>
                                             <input type="password" autocomplete="off" asp-for="contraConfirm" class="form-control" maxlength="200" placeholder="Escriba nuevamente la contraseña">
                                         </div>
                                     </div>
@@ -187,7 +213,7 @@
                             <br />
                             <div class="row">
                                 <div class="col-lg-8 col-lg-offset-2">
-                                    <button class="btn btn-block btn-verde redondeo shadow grow" type="submit">
+                                    <button class="btn btn-block btn-verde redondeo shadow grow" onclick="return validacionFormulario()">
                                         <i class="fa fa-save"></i> @TituloBtn
                                     </button>
                                 </div>
@@ -223,6 +249,124 @@
     }
     function HideModalUsuario() {
         $('#modal-editUser').modal("hide");
+    }
+
+    function validacionFormulario() {
+        //DECLARAMOS LAS VARIABLES
+        debugger;
+        var nombre, apellido, usuario, rol, contra, contra2, direccion, telefono, correo, tituloNombre, tituloApellido,
+            tituloUsuario, tituloRol, tituloContra, tituloContra2, tituloContra2, tituloTelefono, tituloCorreo;
+
+        nombre = $('#Nombres').val();
+        apellido = $('#Apellidos').val();
+        usuario = $('#UserName').val();
+        rol = $("#Rol").val()
+        contra = $('#contra').val();
+        contra2 = $('#contraConfirm').val();
+        direccion = $('#Direccion').val();
+        telefono = $('#PhoneNumber').val();
+        correo = $('#Email').val();
+
+        //VALIDACIONES
+        if (!(/[A-Za-z]{1,200}/.test(nombre))) {
+            $("#lblErrorNombre").show();
+            $("#contentNombre").addClass("has-error animated shake");
+            $('#Nombres').focus();
+            tituloNombre = "Debe ingresar un Nombre";
+            $('#Nombres').tooltip({ title: tituloNombre, placement: "bottom" });
+            $('#Nombres').tooltip('show');
+            return false;
+        }
+        else if (/[A-Za-z]{1,200}/.test(nombre)) {
+            $("#lblErrorNombre").hide();
+            $("#contentNombre").removeClass("has-error animated shake");
+            $('#Nombres').tooltip('destroy');
+        }
+
+        if (!(/[A-Za-z]{1,200}/.test(apellido))) {
+            $("#lblErrorApellido").show();
+            $("#contentApellido").addClass("has-error animated shake");
+            $('#Apellidos').focus();
+            tituloApellido = "Debe ingresar su Apellido";
+            $('#Apellidos').tooltip({ title: tituloApellido, placement: "bottom" });
+            $('#Apellidos').tooltip('show');
+            return false;
+        }
+        else if (/[A-Za-z]{1,200}/.test(apellido)) {
+            $("#lblErrorApellido").hide();
+            $("#contentApellido").removeClass("has-error animated shake");
+            $('#Apellidos').tooltip('destroy');
+        }
+
+        if (!(/[A-Za-z0-9]{1,200}/.test(usuario))) {
+            $("#lblErrorUsuario").show();
+            $("#contentUsuario").addClass("has-error animated shake");
+            $('#UserName').focus();
+            tituloUsuario = "Debe ingresar un nombre de usuario";
+            $('#UserName').tooltip({ title: tituloUsuario, placement: "bottom" });
+            $('#UserName').tooltip('show');
+            return false;
+        }
+        else if (/[A-Za-z0-9]{1,200}/.test(usuario)) {
+            $("#lblErrorUsuario").hide();
+            $("#contentUsuario").removeClass("has-error animated shake");
+            $('#UserName').tooltip('destroy');
+        }
+
+        if (rol == "") {
+            $("#lblErrorRol").show();
+            $("#contentRol").addClass("has-error animated shake");
+            $('#Rol').focus();
+            tituloRol = "Debe seleccionar un Rol";
+            $('#Rol').tooltip({ title: tituloRol, placement: "bottom" });
+            $('#Rol').tooltip('show');
+            return false;
+        } else {
+            $("#lblErrorRol").hide();
+            $("#contentRol").removeClass("has-error animated shake");
+            $('#Rol').tooltip('destroy');
+        }
+
+        if (!(/[A-Za-z0-9]{5,50}/.test(contra))) {
+            $("#lblErrorContra").show();
+            $("#contentContra").addClass("has-error animated shake");
+            $('#contra').focus();
+            tituloContra = "Debe ingresar mas de cinco digitos";
+            $('#contra').tooltip({ title: tituloContra, placement: "bottom" });
+            $('#contra').tooltip('show');
+            return false;
+        }
+        else if (/[A-Za-z0-9]{5,50}/.test(contra)) {
+            $("#lblErrorContra").hide();
+            $("#contentContra").removeClass("has-error animated shake");
+            $('#contra').tooltip('destroy');
+        }
+
+        if (!(/[A-Za-z0-9]{5,50}/.test(contra2))) {
+            $("#lblErrorContra2").show();
+            $("#contentContra2").addClass("has-error animated shake");
+            $('#contraConfirm').focus();
+            tituloContra = "Debe ingresar mas de cinco digitos";
+            $('#contraConfirm').tooltip({ title: tituloContra, placement: "bottom" });
+            $('#contraConfirm').tooltip('show');
+            return false;
+        } else if (contra != contra2) {
+            $("#lblErrorContra2").show();
+            $("#contentContra2").addClass("has-error animated shake");
+            $('#contraConfirm').focus();
+            tituloContra = "Las contraseñas no coinciden";
+            $('#contraConfirm').tooltip('destroy');
+            $('#contraConfirm').tooltip({ title: tituloContra, placement: "bottom" });
+            $('#contraConfirm').tooltip('show');
+            return false;
+        }
+        else if (/[A-Za-z0-9]{5,50}/.test(contra2)) {
+            $("#lblErrorContra2").hide();
+            $("#contentContra2").removeClass("has-error animated shake");
+            $('#contraConfirm').tooltip('destroy');
+        }
+
+        return true;
     }
 
 </script>

@@ -15,6 +15,11 @@ namespace Dominio.Contratos
         Task<bool> GuardarUsuario(UsuarioDto usuarioDto);
         Task<bool> EliminarUsuario(string Id);
         List<UsuarioDto> ObtenerUsuarios();
+        List<RolDto> ObtenerRoles();
+        Task<RolDto> BuscarRolPorIdRol(string IdRol);
+        Task<bool> EliminarRol(string Id);
+        Task<bool> ActualizarRol(RolDto rolDto);
+        Task<bool> GuardarRol(RolDto roldto);
         Task<byte[]> ObtenerUsuariosExcel();
-    } 
+    }
 }

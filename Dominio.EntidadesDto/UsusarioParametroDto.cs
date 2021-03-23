@@ -8,5 +8,6 @@ namespace Dominio.EntidadesDto
     {
         public int Origen { get; set; }
         public string IdUser { get; set; }
+        public string IdRol { get; set; }
     }
 }
