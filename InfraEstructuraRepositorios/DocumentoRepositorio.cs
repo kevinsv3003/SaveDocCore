@@ -13,13 +13,16 @@ namespace InfraEstructuraRepositorios
 {
     public class DocumentoRepositorio : BaseRepositorio<Documento>, IDocumento
     {
-        public  DocumentoRepositorio(DbContext context) : base(context)
+        public IConfiguration Configuration { get; }
+
+        public DocumentoRepositorio(DbContext context, IConfiguration configuration) : base(context)
         {
+            this.Configuration = configuration; 
         }
 
         public bool InsertarDocumento(Documento doc)
         {
-            var connection = @"Server=(localdb)\MSSQLLocalDB;Database=MiProyectoCoreDB;Trusted_Connection=True;MultipleActiveResultSets=true";
+            var connection = Configuration.GetConnectionString("MiProyectoCore"); // @"Server=(localdb)\MSSQLLocalDB;Database=MiProyectoCoreDB;Trusted_Connection=True;MultipleActiveResultSets=true";
             var retorno = false;
             using (var conn = new SqlConnection(connection))
             {
@@ -49,7 +52,7 @@ namespace InfraEstructuraRepositorios
 
         public bool ActualizarDocByte(int docId, string extension, byte[] documento)
         {
-            var connection = @"Server=(localdb)\MSSQLLocalDB;Database=MiProyectoCoreDB;Trusted_Connection=True;MultipleActiveResultSets=true";
+            var connection = Configuration.GetConnectionString("MiProyectoCore"); // @"Server=(localdb)\MSSQLLocalDB;Database=MiProyectoCoreDB;Trusted_Connection=True;MultipleActiveResultSets=true";
             var retorno = false;
             using (var conn = new SqlConnection(connection))
             {
@@ -78,7 +81,7 @@ namespace InfraEstructuraRepositorios
         {
             var doc = new Documento();
             byte[] documento = { };
-            var connection = @"Server=(localdb)\MSSQLLocalDB;Database=MiProyectoCoreDB;Trusted_Connection=True;MultipleActiveResultSets=true";
+            var connection = Configuration.GetConnectionString("MiProyectoCore"); // @"Server=(localdb)\MSSQLLocalDB;Database=MiProyectoCoreDB;Trusted_Connection=True;MultipleActiveResultSets=true";
 
 
             using (var conn = new SqlConnection(connection))

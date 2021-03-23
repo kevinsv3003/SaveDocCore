@@ -4578,7 +4578,8 @@
         "dependencies": {
           "InfraEstructura.AccesoDatos": "1.0.0",
           "InfraEstructura.Contratos": "1.0.0",
-          "InfraEstructuraRepositorios": "1.0.0"
+          "InfraEstructuraRepositorios": "1.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "2.1.1"
         },
         "compile": {
           "bin/placeholder/InfraEstructura.UoW.dll": {}
